@@ -26,6 +26,7 @@ console.log(possibleWinners)
 
 }
 
+
 //2
 
 function printLeaderboard (){
@@ -38,7 +39,22 @@ function printLeaderboard (){
 
     ];
 
-    players.sort((a,b) => b.scores - a.scores);
+    players.sort((a,b) => b.score - a.score);
 
-console.log(players)
+// In ra bảng xếp hạng, thêm huy chương cho 3 vị trí đầu
+
+    players.forEach((player, index) => {
+        let medal = "";
+        if (index === 0) {
+            medal = "🥇";
+        } else if (index === 1) {
+            medal = "🥈";
+        } else if (index === 2) {
+            medal = "🥉";
+        }
+
+        console.log(`${medal} #${index + 1} - ${player.name}: ${player.score} điểm`);
+    });
 }
+
+printLeaderboard();
