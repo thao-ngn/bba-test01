@@ -15,6 +15,8 @@ for (let key in coins){
 }
 console.log (total);
 
-let medium = total/3;
-console.log(medium);
+//Tính coin dư
+
+let medium = total % 3;
+console.log("Medium:" , medium);
 
